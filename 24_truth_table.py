@@ -1,5 +1,6 @@
+#this code perfectly gives expected output in python idle
 a=int(input())
-d=[]
+d,m=[],[]
 for i in range(0,2**a):
   b='{:2b}'.format(i)
   if len(b)<a:
@@ -12,4 +13,6 @@ for i in range(0,len(d)):
   if ' ' in p:
     k=p.index(' ')
     p[k]='0'
-  print(''.join(p))
+  m.append(''.join(p))
+for i in m:
+  print(i)
