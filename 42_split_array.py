@@ -8,13 +8,16 @@ def split(a,m):
     b.append(mi)
   ma.append(max(b))
   return ma
-for i in range(0,n-1):
-  for j in range(0,k):
-    if j%2==0:
-      a.append(l[:i+1])
-    else:
-      a.append(l[i+1:])
-  b = []
-  c = split(a,k)
-  a = []
-print(max(c))
+if k ==1 or n==k:
+  print(min(l))
+else:
+  for i in range(0,n-1):
+    for j in range(0,k):
+      if j%2==0:
+        a.append(l[:i+1])
+      else:
+        a.append(l[i+1:])
+    b = []
+    c = split(a,k)
+    a = []
+  print(max(c))
