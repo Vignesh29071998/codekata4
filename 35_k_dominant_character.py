@@ -19,10 +19,12 @@ for i in range(0,len(a)-1):
       else:
         flag = 0
         break
+    if flag == 1:
+      print(count)
+      break
+    else:
+      continue
   c = []
-  if flag == 1:
-    print(count)
-    break
-  else:
-    continue
-    
+  if flag==1:
+    break  
+
