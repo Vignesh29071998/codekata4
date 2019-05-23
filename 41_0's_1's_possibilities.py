@@ -1,23 +1,26 @@
 a, b = map(int,input().split())
-def permutation(p):
+def permutation(p,t):
   s = ''
-  if p <= 1 or a == 1:
+  if p <= 1:
     for i in range(0,a+b):
-      if i%2 == 0:
-        s += '1'
-      else:
+      if i%2 != 0:
         s += '0'
-    return s
+      else:
+        s += '1'
+    print(s)
   else:
     k = ((a+b)//3)*3
     for i in range(0,k,3):
-      s += '110'
+      s += t
     if abs((a+b)-k) == 1:
       s += '1'
     elif abs((a+b)-k) == 2:
       s += '11'
-    return s
+    if s[-4:] == '1111':
+      permutation(b//a,'110')
+    else:
+      print(s)
 if b//a == 2 or b//a == 1:
-  print(permutation(b//a))
+  permutation(b//a,'011')
 else:
   print('-1')
